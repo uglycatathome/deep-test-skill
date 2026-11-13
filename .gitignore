@@ -1,0 +1,11 @@
+# 只发布 skill 内容，其余全部忽略
+/*
+!/.gitattributes
+!/.gitignore
+!/LICENSE
+!/README.md
+!/SKILL.md
+!/references/
+/references/*
+!/references/deep-procedure.md
+!/references/EFFECTIVENESS.md
