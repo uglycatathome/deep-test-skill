@@ -29,16 +29,34 @@ deep-test/
 
 ## 安装
 
-复制整个目录到 Agent Skill 注册目录，保持 `SKILL.md` 与 `references/` 的相对位置不变：
+本 skill 遵循通用的 Agent Skill 目录约定：一个 skill 就是一个以 `SKILL.md` 为入口的目录，`references/`、`scripts/` 等同级资源一律用相对路径引用。不同宿主的注册机制不同，但只要满足下面的契约，就能被识别和加载。
 
-- CodeArts Agent 及兼容 Agent Skills 的客户端：`~/.codeartsdoer/skills/deep-test`
-- 通用位置：`~/.agents/skills/deep-test`
+### 通用安装契约
 
-安装注意：
+1. 目录名与 frontmatter 中的 `name` 一致（`deep-test`）。
+2. `SKILL.md` 位于目录根部，文件名保持大写。
+3. `references/` 与 `SKILL.md` 同级，内部文件的相对路径不变。
+4. 使用真实目录；需要与源目录保持同步时用符号链接，不要用 Windows 目录联接（junction），部分扫描器不会跟随。
 
-- 必须使用真实目录副本，安装后修改源目录不会自动同步。
-- Windows 下目录联接（junction）不会被部分扫描器识别；符号链接可用。
-- `SKILL.md` 必须是文件名，frontmatter 只保留 `name` 与 `description`。
+### 常见接入方式
+
+按宿主提供的机制任选一种：
+
+- **用户级目录**：把整个目录放入宿主的用户级 skill 根目录，通常形如 `~/.<host>/skills/deep-test`，对该用户的所有项目生效。
+- **项目级目录**：把整个目录放入工程内的约定位置（例如 `.agents/skills/deep-test` 或宿主文档给出的目录），随项目一起提交，协作者克隆后即可使用。
+- **配置或环境变量**：若宿主允许声明额外的 skill 搜索路径，把本目录加入该路径，无需复制。
+- **安装器或插件市场**：若宿主提供 skill 安装器，可用"从本地目录导入"、"从压缩包导入"或"从 Git 仓库安装"；本仓库根目录本身就是合法的 skill 目录。
+- **手动注册**：少数宿主需要显式登记，在配置文件中写入 `SKILL.md` 的路径即可。
+
+### 安装后验证
+
+1. 重新加载宿主或新开一个会话：多数宿主只在启动时扫描 skill 目录。
+2. 查看可用 skill 列表，确认出现 `deep-test`。
+3. 在目标工程中发出触发语（如"深度测试这个工程"），确认能加载 `SKILL.md`，并能读到 `references/deep-procedure.md`。
+
+### 更新
+
+安装目录是独立副本，修改源目录不会自动同步。更新时重新复制 `SKILL.md` 与 `references/`，或在支持链接的宿主上改用符号链接。
 
 ## 使用
 
