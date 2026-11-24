@@ -1,7 +1,6 @@
 ---
 name: deep-test
-description: >-
-  Use only when the user's own words ask for a deep test of a project or code, e.g. "深度测试", "深测", "深度测试这个工程", "deep test", "deep-test". Not for ordinary test, QA or bug-finding requests that lack these words.
+description: "Use only when the user's own words ask for a deep test of a project or code, e.g. \"深度测试\", \"深测\", \"深度测试这个工程\", \"deep test\", \"deep-test\". Not for ordinary test, QA or bug-finding requests that lack these words."
 ---
 
 # deep-test（深度测试）
@@ -38,7 +37,7 @@ description: >-
 
 ## 3. 深度测试
 
-普通测试结束后才读本 skill 目录下的 `references/deep-procedure.md`，照它执行；读不到就告诉用户并停止。深度测试时长 B = 所选比例 × T。
+普通测试结束后才读本 skill 目录下的 `references/deep-procedure.md`，照它执行；读不到就告诉用户并停止。深度测试时长 B = 所选比例 × T，最低 5 分钟（不足按 5 分钟计），并在报告摘要注明是否启用了最低预算。
 
 ## 4. 收尾
 
