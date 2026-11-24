@@ -1,6 +1,6 @@
 ---
 name: deep-test
-description: "Use only when the user's own words ask for a deep test of a project or code, e.g. \"深度测试\", \"深测\", \"深度测试这个工程\", \"deep test\", \"deep-test\". Not for ordinary test, QA or bug-finding requests that lack these words."
+description: "能把高危/中危测试问题的发现能力提升到再跑一次普通测试的 1.3–1.8 倍。深度测试 Skill：先完整跑一轮普通测试，再按所选时间比例追加一轮查漏补缺，只找普通测试漏掉的问题。内部评测覆盖 2 个真实项目、6 次深度测试，3 次普通测试都没找到的根因分别补出 6 个和 10 个；端到端验证中普通测试 14 条问题后新增 5 条已复现问题，6 项安全检查全部覆盖，未改动被测源码。成本为普通测试用时的 30%–200%，建议从 60% 档开始。仅在用户原话要求「深度测试/深测/deep test/deep-test」时触发；普通测试、QA、找 bug 不触发。"
 ---
 
 # deep-test（深度测试）
